@@ -15,4 +15,18 @@ describe('dev-log', () => {
 
     expect(code).toBe(expected)
   });
+
+  test('should be pass parameter customIdentifier value', () => {
+    const rawCode = `if (__DEV__) { console.log(1) }`
+
+    const { code } = transformSync(rawCode, {
+      plugins: [[devLog, { customIdentifier: "__DEV__" }]]
+    })
+
+    const expected = `if ("__DEV__") {
+  console.log(1);
+}`
+
+    expect(code).toBe(expected)
+  });
 });
