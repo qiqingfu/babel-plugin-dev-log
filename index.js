@@ -11,6 +11,15 @@ module.exports = function devLog ({ types: t }) {
         if (parentNodeIsIfStatement && isIdentifier) {
           path.replaceWith(t.stringLiteral(customIdentifier))
         }
+      },
+      StringLiteral(path, state) {
+        const { customIdentifier ,isProd } = getOpts(state)
+        const parentNodeIsIfStatement = t.isIfStatement(path.parent)
+        const isIdentifier = path.node.value === customIdentifier
+
+        if (parentNodeIsIfStatement && isIdentifier && isProd) {
+          path.parentPath.remove()
+        }
       }
     }
   }
@@ -19,6 +28,7 @@ module.exports = function devLog ({ types: t }) {
 function getOpts (state) {
   const opts = state.opts ?? {}
   return {
-    customIdentifier: opts.customIdentifier ?? DEFAULT_IDENTIFIER
+    customIdentifier: opts.customIdentifier ?? DEFAULT_IDENTIFIER,
+    isProd: opts.env === "production"
   }
 }

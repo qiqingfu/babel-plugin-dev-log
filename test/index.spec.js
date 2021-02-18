@@ -29,4 +29,16 @@ describe('dev-log', () => {
 
     expect(code).toBe(expected)
   });
+
+  test('should be removeed in production', () => {
+    const rawCode = `if (__DEBUG__) { console.log(1) }`
+
+    const { code } = transformSync(rawCode, {
+      plugins: [[devLog, { env: "production" }]]
+    })
+
+    const expected = ''
+
+    expect(code).toBe(expected)
+  });
 });
