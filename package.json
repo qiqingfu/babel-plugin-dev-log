@@ -1,29 +1,32 @@
 {
   "name": "babel-plugin-dev-log",
-  "author": {
-    "name": "qiqingfu",
-    "email": "723469354@qq.com",
-    "url": "https://github.com/qiqingfu"
-  },
-  "version": "1.0.0",
+  "version": "1.0.1",
+  "author": "qiqingfu <723469354@qq.com>",
+  "main": "./index.js",
   "bugs": {
     "url": "https://github.com/qiqingfu/babel-plugin-dev-log/issues"
   },
   "description": "A babel plugin to help log output and debugging in the development environment",
   "keywords": [
     "babel",
-    "babel-plugin",
-    "vue",
-    "javascript"
+    "babel-plugin"
   ],
   "homepage": "https://github.com/qiqingfu/babel-plugin-dev-log",
   "devDependencies": {
     "@babel/core": "^7.12.16",
     "@babel/preset-env": "^7.12.16",
     "babel-jest": "^26.6.3",
-    "jest": "^26.6.3"
+    "jest": "^26.6.3",
+    "ypkgfiles": "^1.6.0"
+  },
+  "engines": {
+    "node": ">=4.0.0"
   },
   "scripts": {
-    "test": "jest"
-  }
+    "test": "jest",
+    "create:files": "pkgfiles"
+  },
+  "files": [
+    "index.js"
+  ]
 }
