@@ -1,4 +1,22 @@
 {
+  "name": "babel-plugin-dev-log",
+  "author": {
+    "name": "qiqingfu",
+    "email": "723469354@qq.com",
+    "url": "https://github.com/qiqingfu"
+  },
+  "version": "1.0.0",
+  "bugs": {
+    "url": "https://github.com/qiqingfu/babel-plugin-dev-log/issues"
+  },
+  "description": "A babel plugin to help log output and debugging in the development environment",
+  "keywords": [
+    "babel",
+    "babel-plugin",
+    "vue",
+    "javascript"
+  ],
+  "homepage": "https://github.com/qiqingfu/babel-plugin-dev-log",
   "devDependencies": {
     "@babel/core": "^7.12.16",
     "@babel/preset-env": "^7.12.16",
