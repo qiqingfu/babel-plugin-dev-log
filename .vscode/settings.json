@@ -1,6 +1,5 @@
 {
   "editor.formatOnSave": true,
-  //项目配置
   "[vue]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
@@ -16,7 +15,6 @@
   "[html]": {
       "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
-  //非项目配置
   "prettier.tabWidth":2,
   "prettier.semi": false,
   "prettier.singleQuote": true,
