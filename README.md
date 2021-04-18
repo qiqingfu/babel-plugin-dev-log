@@ -2,11 +2,11 @@
 
 # babel-plugin-dev-log
 
-一款帮助在开发环境下进行日志输出与调试的 babel 插件
+helps developers debug and log output in the development environment
 
 
 
-## 安装 
+## Install 
 
 ### npm
 
@@ -22,41 +22,41 @@ yarn add babel-plugin-dev-log
 
 
 
-## 使用
+## Usage
 
-1. 配置 .eslintrc.js 文件
+1. Configure the `.eslintrc.js` file
 
    ```javascript
    module.exports = {
-     // 省略其他配置项
+     // Omit other configuration items
      globals: {
        __DEV__: true
      }
    }
    ```
 
-2. babel 配置文件（如 `.babelrc.js`）
+2. The Babel configuration file（such as `.babelrc.js`）
 
    ```javascript
    module.exports = {
-     // 省略其他配置项
+     // Omit other configuration items
      plugins: [['dev-log']]
    }
    ```
 
-3. 调试示例
+3. Output in the project
 
    ```javascript
    if (__DEV__) {
-     console.log("仅在开发环境下输出此条日志, 生产环境则忽略 if(__DEV__){...} 块中的代码")
+     console.log("This log is printed only in the development environment. Production ignores if(__DEV__){...} block")
    }
    ```
 
 
 
-## 插件选项
+## Options
 
 | Name                   | Type        | Default                                 | Description                                                  |
 | ---------------------- | ----------- | --------------------------------------- | ------------------------------------------------------------ |
-| **`customIdentifier`** | `{String}`  | `__DEV__`                               | `if(__DEV__){}` 语句块中的标识符，可自定义配置标识符。**注意：** `.eslintrc.js 中 globals key 值应与标识符保持一致`。 |
-| **`isProd`**           | `{Boolean}` | `process.env.NODE_ENV === "production"` | 在 `isProd` 为 `true` 的环境下，会移除 `if(__DEV__){...}` 块内的代码。多数用在项目构建打包阶段。 |
+| **`customIdentifier`** | `{String}`  | `__DEV__`                               | Use a custom identifier. **notes：** The key value of the globals option in the `.eslintrc.js` file should be the same as the custom identifier. |
+| **`isProd`**           | `{Boolean}` | `process.env.NODE_ENV === "production"` | When isProd is true, remove `if(__DEV__){...}` block. Most applications are in the package build phase. |
